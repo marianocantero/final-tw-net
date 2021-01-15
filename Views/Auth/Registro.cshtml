@@ -1,0 +1,35 @@
+﻿@model ProyectoFinalTwitter.Models.Usuario
+@{
+}
+
+<div class="contenedor">
+    <div class="logo">
+        <i class="fab fa-twitter"></i>
+    </div>
+    <h1 class="titulo-auth">Registrarse en TwClon</h1>
+    <form asp-controller="Auth" asp-action="Registro" method="POST">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="campo">
+            @Html.TextBoxFor(s => s.Email, new { @placeholder = "Email" })
+            @Html.ValidationMessageFor(s => s.Email, "", new { @class = "text-danger text-center" })
+            @*   <input type="email" name="email" id="email" placeholder="Email"> *@
+        </div>
+
+        <div class="campo">
+            @Html.TextBoxFor(s => s.Password, new { @placeholder = "Password", @type = "password" })
+            @Html.ValidationMessageFor(s => s.Password, "", new { @class = "text-danger text-center" })
+            @* <input type="password" name="password" id="password" placeholder="Contraseña"> *@
+        </div>
+        <div class="campo">
+            @Html.TextBoxFor(s => s.UserName, new { @placeholder = "Nombre de usuario" })
+            @Html.ValidationMessageFor(s => s.UserName, "", new { @class = "text-danger text-center" })
+            @* <input type="text" name="username" id="username" placeholder="Nombre de usuario"> *@
+        </div>
+        <div class="campo">
+            <button type="submit" class="btn-primario">Registrarme</button>
+        </div>
+         <div class="campo">
+            <a class=" text-center" href="~/Auth/Login">¿Ya tienes una cuenta? Incia Sesion</a>
+        </div>
+    </form>
+</div>

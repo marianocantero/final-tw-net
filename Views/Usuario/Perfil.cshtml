@@ -1,0 +1,33 @@
+@model IEnumerable<ProyectoFinalTwitter.Models.Tweet>
+<div class="row">
+    
+        <div class="col-4" >
+            <a asp-controller="Main" asp-action="Index" class="btn-primario" style="width: 130px;"><i class="fas fa-home mr-1"></i>Inicio</a>
+            <a class="btn-primario" style="width: 130px;" asp-controller="Usuario" asp-action="Perfil" asp-route-id="@ViewBag.UsuarioLogueadoVista"><i class="fas fa-user-alt mr-1"></i>Mi perfil</a>
+            <a class="btn-primario" style="width: 130px;" asp-controller="Usuario" asp-action="Editar" asp-route-id="@ViewBag.usuarioLogueadoVista"><i class="fas fa-user-cog mr-1"></i>Configuracion</a>
+            <a class="btn-primario" style="width: 130px;" asp-controller="Usuario" asp-action="Busqueda"><i class="fas fa-search mr-1"></i></i>Busqueda</a> 
+        </div>
+        <div class="col-8">
+            <h1 class="font-weight-bold text-light">Perfil </h1>
+            <hr/>
+             @foreach (var item in Model)
+        {
+            <div class="card mx-auto mb-3 fondo">
+                <div class="tweet border">
+                    <p class="usuario font-weight-bold border text-light pl-1">
+                       <a asp-controller="Usuario" asp-action="Perfil" asp-route-id="@item.UsuarioId"> @Html.DisplayFor(modelItem => item.Autor.UserName)</a>
+                    </p>
+                    <p class="contenido-tweet py-2 fondo text-light  ml-2">@Html.DisplayFor(modelItem => item.Mensaje)</p>
+                    <footer class="acciones">
+                        <a class=" mr-3 font-weight-bold text-light py-1 px-2 " asp-controller="Tweet" asp-action="Likear" asp-route-id="@item.TweetId">Me gusta <i class="far fa-thumbs-up px-2"></i></a>   
+                      
+                        @if(item.UsuarioId == ViewBag.usuarioLogueadoVista){
+                            <a class="py-1 px-2 font-weight-bold px-2 text-light" role="button" onclick="return confirm('¿Desea eliminar el tweet?')" asp-controller="Tweet" asp-action="Eliminar" asp-route-id="@item.TweetId">Eliminar<i class="far fa-trash-alt px-2 "></i></a>
+                        }
+                    </footer>
+                </div>
+            </div>
+        }
+        </div>
+    
+</div>

@@ -1,0 +1,27 @@
+@model ProyectoFinalTwitter.Models.Usuario
+@{
+}
+
+<div class="contenedor">
+    <div class="logo">
+        <i class="fab fa-twitter"></i>
+    </div>
+    <h1 class="font-weight-bold text-light text-center">Edita tu informacion</h1>
+    <form asp-controller="Registro" asp-action="Editar" method="POST">
+       
+        <div class="campo">
+             <input type="email" name="email" id="email" value="@Model.Email" placeholder="Email"> 
+        </div>
+
+        <div class="campo">
+             <input type="password" name="password" id="password" value ="@Model.Password" placeholder="Contraseña"> 
+        </div>
+        <div class="campo">
+            <input type="text" name="username" id="username" placeholder="Nombre de usuario" value="@Model.UserName"> 
+        </div>
+        <input type="hidden" name ="usuarioId" id="UsuarioId" value="@Model.UsuarioId">
+        <div class="campo">
+            <button type="submit" class="btn-primario" asp-controller="Usuario" asp-action="Editar" asp-route-id="@ViewBag.usuarioLogueadoVista">Editar informacion</button>
+        </div>
+    </form>
+</div>

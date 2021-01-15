@@ -1,0 +1,13 @@
+﻿@model ProyectoFinalTwitter.Models.Tweet
+@{
+}
+<div class="container" style="width: 600px; margin-top:150px">
+    <form asp-controller="Tweet" asp-action="Crear" method="post">
+        <div class="form-group">
+            <label for="tweetNuevo" class="font-weight-bold">¿Que quieres decirles a tus seguidores?</label>
+            <input type="text" name="mensaje" class="form-control" id="mensaje" placeholder="Escribe lo que quieras compartir!">
+            <button class="btn btn-primary btn-block mt-3">Crear tweet <i class="fab fa-twitter ml-2"></i></button>
+        </div>
+    </form>
+</div>
+            

@@ -1,0 +1,153 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+    color: #0366d6;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    font-family: 'PT Sans';
+    background-color: rgb(63, 105, 148);
+    
+}
+body ::placeholder { color: white; }
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+ul {
+    list-style: none;
+}
+
+.contenedor {
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.btn-primario {
+    border: none;
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    margin: 15px auto;
+    padding: 15px 20px;
+    border-radius: 9999px;
+    background-color: #0084b4;
+    color: #fff;
+}
+
+.fondo {
+    background-color: rgb(63, 105, 148);
+}
+
+.btn-primario:hover {
+    cursor: pointer;
+}
+
+/**Login**/
+
+.logo i {
+    font-size: 35px;
+    text-align: center;
+    color: #0084b4;
+    margin: 0 auto;
+    display: block;
+}
+
+.titulo-auth {
+    font-size: 31px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+}
+
+    .campo input {
+        justify-content: center;
+        width: 80%;
+        padding: 10px 20px;
+        margin-bottom: 10px;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        font-family: 'PT Sans';
+        margin: 10px auto;
+    }
+
+        .campo input:focus, input.form-control:focus {
+            outline: none !important;
+            outline-width: 0 !important;
+            box-shadow: none;
+            -moz-box-shadow: none;
+            -webkit-box-shadow: none;
+        }
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+}

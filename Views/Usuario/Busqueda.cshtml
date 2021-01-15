@@ -1,0 +1,12 @@
+@model ProyectoFinalTwitter.Models.Usuario
+@{
+}
+<div class="container" style="width: 600px; margin-top:150px">
+    <form asp-controller="Usuario" asp-action="Busqueda" method="post">
+        <div class="form-group">
+            <label for="busqueda" class="font-weight-bold text-light">Busca a tus amigos</label>
+            <input type="text" name="busqueda" class="form-control" id="busqueda" placeholder="Busca por nombre de usuario">
+            <button class="btn btn-primary btn-block mt-3">Buscar <i class="fas fa-search mr-1"></i></button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,38 @@
+@model IEnumerable<ProyectoFinalTwitter.Models.Usuario>
+    <div class="row">
+    <div class="col-3">
+       <a asp-controller="Main" asp-action="Index" class="btn-primario" style="width: 130px;"><i class="fas fa-home mr-1"></i>Inicio</a>
+        <a class="btn-primario" style="width: 130px;" asp-controller="Usuario" asp-action="Perfil" asp-route-id="@ViewBag.UsuarioLogueadoVista"><i class="fas fa-user-alt mr-1"></i>Mi perfil</a>
+        <a class="btn-primario" style="width: 130px;" asp-controller="Usuario" asp-action="Editar" asp-route-id="@ViewBag.usuarioLogueadoVista"><i class="fas fa-user-cog mr-1"></i>Configuracion</a>
+        <a class="btn-primario" style="width: 130px;" asp-controller="Usuario" asp-action="Busqueda"><i class="fas fa-search mr-1"></i></i>Busqueda</a> 
+    </div>
+    
+        <div class="col-6">
+            <h1 class="font-weigth-bold text-light">Resultados de la búsqueda</h1>
+            <hr/>
+            @foreach (var item in Model)
+            {
+                <div class="card mx-auto mb-3 fondo border">
+                    <div class="card-text d-flex justify-content-between align-items-center">
+                        <p class="usuario font-weight-bold  text-light pl-1">
+                            @Html.DisplayFor(modelItem => item.UserName)
+                        </p>
+                        <a class="btn-primario" style="margin-right: 10px;" asp-controller="Usuario" asp-action="SeguirUsuario" asp-route-id="@item.UsuarioId">Seguir<i class="fas fa-user-plus ml-2"></i></a>
+                    </div>
+                </div>
+        }
+        </div>
+
+        <div class="col-3">
+        
+                <p class="font-weight-bold text-light text-center"># Personas que pueden interesar</p>
+                    @foreach (Usuario usuariov in ViewBag.recomendados)
+                    {
+                        <div class="personas-interes d-flex justify-content-between d-flex align-items-center mb-3 pb-2 border-bottom">
+                        <p style="margin-bottom: 0px;" class="font-weight-bold text-light"> @usuariov.UserName</p>
+                        <a class="d-inline-block text-light" asp-controller="Usuario" asp-action="SeguirUsuario" asp-route-id="@usuariov.UsuarioId">Seguir<i class="fas fa-user-plus ml-2"></i></a>
+                        </div>
+                    }
+        
+        </div>
+    </div>
